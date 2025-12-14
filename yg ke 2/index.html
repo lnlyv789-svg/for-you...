@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎀</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Dancing+Script:wght@400;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Music Control -->
+    <div class="music-control">
+        <button id="musicToggle" class="music-btn">
+            <i class="fas fa-volume-up"></i>
+            <span id="musicText">Musik ON</span>
+        </button>
+        <audio id="birthdayMusic" preload="auto">
+            <!-- Sumber musik alternatif -->
+            <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Main Slides Container -->
+    <div class="slides-container">
+        <!-- Slide 1: Opening -->
+        <div class="slide active" id="slide1">
+            <div class="slide-content">
+                <div class="character bunny-character animate__animated animate__bounceIn">
+                    <div class="bunny">
+                        <div class="ear left"></div>
+                        <div class="ear right"></div>
+                        <div class="face">
+                            <div class="eye left"></div>
+                            <div class="eye right"></div>
+                            <div class="nose"></div>
+                            <div class="mouth smile"></div>
+                        </div>
+                        <div class="bow"></div>
+                    </div>
+                </div>
+                
+                <div class="message-box animate__animated animate__fadeInUp">
+                    <h1 class="title">Happy Birthday! <span class="emoji">🎂</span></h1>
+                    <h2 class="subtitle">Untuk <span class="highlight" id="birthdayName">Sahabatku</span></h2>
+                    <p class="date">🍟 Hari ini adalah harimu! 🍟</p>
+                    <p class="hint">Klik tombol di bawah untuk lanjut!</p>
+                </div>
+                
+                <div class="slide-counter">1/6</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Sweet Message -->
+        <div class="slide" id="slide2">
+            <div class="slide-content">
+                <div class="character cat-character">
+                    <div class="cat">
+                        <div class="cat-ear left"></div>
+                        <div class="cat-ear right"></div>
+                        <div class="cat-face">
+                            <div class="cat-eye left"></div>
+                            <div class="cat-eye right"></div>
+                            <div class="cat-nose"></div>
+                            <div class="cat-mouth"></div>
+                            <div class="whiskers">
+                                <div class="whisker left"></div>
+                                <div class="whisker right"></div>
+                            </div>
+                        </div>
+                        <div class="ribbon"></div>
+                    </div>
+                </div>
+                
+                <div class="message-box">
+                    <div class="speech-bubble">
+                        <i class="fas fa-heart bubble-heart"></i>
+                        <h3>Pesan Manis Untukmu</h3>
+                        <p id="birthdayMessage">Di hari spesialmu ini, aku ingin mengucapkan... Kamu adalah orang yang paling spesial! Semoga semua impianmu terkabul dan kebahagiaan selalu menyertaimu.</p>
+                        <div class="bubble-tail"></div>
+                    </div>
+                    
+                    <div class="question-box">
+                        <p class="question">💖 Apa harapan terbesarmu di ulang tahun ini?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Banyak rezeki">Banyak rezeki</button>
+                            <button class="option-btn" data-answer="Kesehatan">Kesehatan</button>
+                            <button class="option-btn" data-answer="Kebahagiaan">Kebahagiaan</button>
+                            <button class="option-btn" data-answer="Semua di atas!">Semua di atas!</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-counter">2/6</div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Wishes & Messages -->
+        <div class="slide" id="slide3">
+            <div class="slide-content">
+                <div class="character bear-character">
+                    <div class="bear">
+                        <div class="bear-ear left"></div>
+                        <div class="bear-ear right"></div>
+                        <div class="bear-face">
+                            <div class="bear-eye left"></div>
+                            <div class="bear-eye right"></div>
+                            <div class="bear-nose"></div>
+                            <div class="bear-mouth"></div>
+                        </div>
+                        <div class="heart-mark"></div>
+                    </div>
+                </div>
+                
+                <div class="message-box">
+                    <h3 class="section-title">Tempat Pesan & Ucapan 💌</h3>
+                    <p class="explanation">Ini adalah tempat khusus untuk menulis pesan dan ucapan untukmu! Teman-teman bisa menuliskan harapan mereka di sini.</p>
+                    
+                    <div class="wishes-container" id="wishesContainer">
+                        <div class="wish-card">
+                            <div class="wish-header">
+                                <i class="fas fa-star"></i>
+                                <span class="wish-author">Dari: Teman Baik</span>
+                            </div>
+                            <p class="wish-text">Selamat ulang tahun! Semoga panjang umur dan selalu sehat ya!</p>
+                        </div>
+                        
+                        <div class="wish-card">
+                            <div class="wish-header">
+                                <i class="fas fa-heart"></i>
+                                <span class="wish-author">Dari: Keluarga</span>
+                            </div>
+                            <p class="wish-text">Semoga sukses selalu dalam segala hal yang kamu lakukan!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="add-wish">
+                        <textarea id="newWish" placeholder="Tulis ucapanmu di sini... ✨" rows="2"></textarea>
+                        <button id="addWishBtn" class="send-btn">
+                            <i class="fas fa-paper-plane"></i> Kirim
+                        </button>
+                    </div>
+                    
+                    <p class="hint">💡 Ucapanmu akan tampil di sini untuk selamanya!</p>
+                </div>
+                
+                <div class="slide-counter">3/6</div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Memory Gallery -->
+        <div class="slide" id="slide4">
+            <div class="slide-content">
+                <div class="character panda-character">
+                    <div class="panda">
+                        <div class="panda-ear left"></div>
+                        <div class="panda-ear right"></div>
+                        <div class="panda-face">
+                            <div class="panda-eye left"></div>
+                            <div class="panda-eye right"></div>
+                            <div class="panda-nose"></div>
+                            <div class="panda-mouth"></div>
+                        </div>
+                        <div class="bamboo"></div>
+                    </div>
+                </div>
+                
+                <div class="message-box">
+                    <h3 class="section-title">Album Kenangan 🎞️</h3>
+                    <p class="explanation">Foto-foto spesial untuk mengingat momen bahagia bersamamu!</p>
+                    
+                    <div class="gallery">
+                        <div class="photo-frame">
+                            <div class="photo-content">
+                                <div class="photo-icon">📸</div>
+                                <p class="photo-desc">Momen bahagia bersama!</p>
+                            </div>
+                            <div class="photo-sticker">✨</div>
+                        </div>
+                        
+                        <div class="photo-frame">
+                            <div class="photo-content">
+                                <div class="photo-icon">😊</div>
+                                <p class="photo-desc">Senyuman terindah!</p>
+                            </div>
+                            <div class="photo-sticker">💖</div>
+                        </div>
+                        
+                        <div class="photo-frame">
+                            <div class="photo-content">
+                                <div class="photo-icon">🎉</div>
+                                <p class="photo-desc">Perayaan spesial!</p>
+                            </div>
+                            <div class="photo-sticker">🌟</div>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-hint">
+                        <p><i class="fas fa-camera"></i> Upload foto favoritmu dengan klik di bawah!</p>
+                        <button class="upload-btn" id="uploadBtn">
+                            <i class="fas fa-cloud-upload-alt"></i> Upload Foto
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="slide-counter">4/6</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Interactive Cake -->
+        <div class="slide" id="slide5">
+            <div class="slide-content">
+                <div class="character unicorn-character">
+                    <div class="unicorn">
+                        <div class="unicorn-horn"></div>
+                        <div class="unicorn-ear left"></div>
+                        <div class="unicorn-ear right"></div>
+                        <div class="unicorn-face">
+                            <div class="unicorn-eye left"></div>
+                            <div class="unicorn-eye right"></div>
+                            <div class="unicorn-nose"></div>
+                        </div>
+                        <div class="unicorn-mane"></div>
+                    </div>
+                </div>
+                
+                <div class="message-box">
+                    <h3 class="section-title">Potong Kue Bersama! 🎂</h3>
+                    
+                    <div class="cake-interactive">
+                        <div class="cake">
+                            <div class="cake-layer bottom"></div>
+                            <div class="cake-layer middle"></div>
+                            <div class="cake-layer top"></div>
+                            <div class="candle">
+                                <div class="flame" id="flame"></div>
+                            </div>
+                            <div class="sprinkles">
+                                <div class="sprinkle"></div>
+                                <div class="sprinkle"></div>
+                                <div class="sprinkle"></div>
+                            </div>
+                        </div>
+                        
+                        <button class="action-btn" id="blowCandleBtn">
+                            <i class="fas fa-wind"></i> Tiup Lilinnya!
+                        </button>
+                        
+                        <div class="cake-message" id="cakeMessage">
+                            Tiup lilin dan buat harapan! 🎂
+                        </div>
+                    </div>
+                    
+                    <div class="fun-fact">
+                        <p><i class="fas fa-lightbulb"></i> Tahukah kamu? Tradisi tiup lilin berasal dari kepercayaan Yunani kuno bahwa asap lilin membawa doa ke dewa-dewa!</p>
+                    </div>
+                </div>
+                
+                <div class="slide-counter">5/6</div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Final & Share -->
+        <div class="slide" id="slide6">
+            <div class="slide-content">
+                <div class="character-group">
+                    <div class="mini-character bunny"></div>
+                    <div class="mini-character cat"></div>
+                    <div class="mini-character bear"></div>
+                    <div class="mini-character panda"></div>
+                    <div class="mini-character unicorn"></div>
+                </div>
+                
+                <div class="message-box final-message">
+                    <div class="confetti-effect" id="confettiEffect">🎉✨🎊🎈</div>
+                    
+                    <h2 class="final-title">Happy Birthday! <span class="emoji">🎁</span></h2>
+                    
+                    <div class="final-text">
+                        <p>Terima kasih sudah menjadi dirimu yang luar biasa!</p>
+                        <p>Semoga hari ini dan semua hari-harimu dipenuhi dengan:</p>
+                        
+                        <div class="blessings">
+                            <div class="blessing">
+                                <i class="fas fa-heart"></i>
+                                <span>Cinta & Kasih Sayang</span>
+                            </div>
+                            <div class="blessing">
+                                <i class="fas fa-laugh-beam"></i>
+                                <span>Tawa & Kebahagiaan</span>
+                            </div>
+                            <div class="blessing">
+                                <i class="fas fa-star"></i>
+                                <span>Keberuntungan & Kesuksesan</span>
+                            </div>
+                            <div class="blessing">
+                                <i class="fas fa-magic"></i>
+                                <span>Keajaiban & Petualangan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="signature">
+                        <p>Dengan penuh cinta,</p>
+                        <h4 class="sender">Teman-temanmu yang menyayangimu 💝</h4>
+                    </div>
+                    
+                    <div class="share-section">
+                        <p class="share-text">Bagikan kebahagiaan ini!</p>
+                        <div class="share-buttons">
+                            <button class="share-btn" id="shareBtn">
+                                <i class="fas fa-share-alt"></i> Share
+                            </button>
+                            <button class="restart-btn" id="restartBtn">
+                                <i class="fas fa-redo"></i> Lihat Ulang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-counter">6/6</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+        <button class="nav-btn prev-btn" id="prevBtn">
+            <i class="fas fa-chevron-left"></i> Sebelumnya
+        </button>
+        
+        <div class="progress-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+        </div>
+        
+        <button class="nav-btn next-btn" id="nextBtn">
+            Berikutnya <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-palette"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
